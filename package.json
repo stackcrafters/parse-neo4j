@@ -1,5 +1,5 @@
 {
-  "name": "parse-neo4j",
+  "name": "stackcrafters-parse-neo4j",
   "version": "0.6.13",
   "description": "Parse results from neo4j's http endpoint to normal JSON",
   "main": "index.js",
@@ -9,8 +9,7 @@
     "package.json"
   ],
   "scripts": {
-    "clean": "rimraf lib",
-    "build": "npm run clean && npm run build:js",
+    "build": "npm run build:js",
     "build:js": "babel ./src -d ./lib  --extensions \".js,.ts,.tsx\" --source-maps --ignore '**/*.test.js'",
     "prepublishOnly": "npm run build"
   },
@@ -20,7 +19,7 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
-    "access": "restricted"
+    "access": "public"
   },
   "keywords": [
     "endpoint",
