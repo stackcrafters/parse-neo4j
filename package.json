@@ -16,7 +16,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:assister-ai/parse-neo4j.git"
+    "url": "https://github.com/stackcrafters/parse-neo4j.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "restricted"
   },
   "keywords": [
     "endpoint",
@@ -27,7 +31,7 @@
   "author": "Keyvan Mir Mohammad Sadeghi <keyvan.m.sadeghi@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/assister-ai/parse-neo4j/issues"
+    "url": "https://github.com/stackcrafters/parse-neo4j/issues"
   },
   "devDependencies": {
     "@stackcrafters/config-babel": "0.1.10"
