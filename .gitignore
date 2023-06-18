@@ -148,3 +148,6 @@ $RECYCLE.BIN/
 
 ### VisualStudioCode ###
 .vscode/
+
+# Lib build dir
+lib
