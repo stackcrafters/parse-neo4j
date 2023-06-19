@@ -59,15 +59,16 @@ const parseRecord = record => {
 
 const parseNeo4jResponse = response => {
     const result = [];
-    for (const record of response.records)
-        if (record.length == 1)
-            result.push(parseRecord(record._fields[0]));
-        else {
+    for (const record of response.records) {
+        // if (record.length == 1)
+        //     result.push(parseRecord(record._fields[0]));
+        // else {
             const parsedRecord = {};
             for (const [index, key] of enumerate(record.keys))
                 parsedRecord[key] = parseRecord(record._fields[index]);
             result.push(parsedRecord);
-        }
+        // }
+    }
     return result;
 };
 
