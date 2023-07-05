@@ -48,7 +48,7 @@ const parseRecord = record => {
                 return [];
             const result = {};
             if (record.identity)
-                result.id = parseRecord(record.identity);
+                result._identity = parseRecord(record.identity);
             for (let [key, value] of keyValues(properties)) {
                 value = parseRecord(value);
                 result[key] = value;
