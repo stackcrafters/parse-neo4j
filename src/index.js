@@ -48,7 +48,11 @@ const parseRecord = record => {
                 return [];
             const result = {};
             if (record.identity)
-                result._identity = parseRecord(record.identity);
+                result.id = parseRecord(record.identity);
+            if (record.elementId)
+                result._elementId = record.elementId;
+            if (record.labels)
+                result._labels = parseRecord(record.labels);
             for (let [key, value] of keyValues(properties)) {
                 value = parseRecord(value);
                 result[key] = value;
@@ -57,7 +61,7 @@ const parseRecord = record => {
         }
 };
 
-const parseNeo4jResponse = response => {
+const parseNeo4jResponse = (response) => {
     const result = [];
     for (const record of response.records) {
         // if (record.length == 1)
