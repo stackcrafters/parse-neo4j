@@ -49,10 +49,19 @@ const parseRecord = record => {
             const result = {};
             if (record.identity)
                 result.id = parseRecord(record.identity);
+
+            result._meta = {};
             if (record.elementId)
-                result._elementId = record.elementId;
+                result._meta._elementId = record.elementId;
             if (record.labels)
-                result._labels = parseRecord(record.labels);
+                result._meta._labels = record.labels;
+            if(record.startNodeElementId)
+                result._meta.startNodeElementId = parseRecord(record.startNodeElementId);
+            if(record.endNodeElementId)
+                result._meta.endNodeElementId = parseRecord(record.endNodeElementId);
+            if(record.type)
+                result._meta.type = record.type;
+
             for (let [key, value] of keyValues(properties)) {
                 value = parseRecord(value);
                 result[key] = value;
