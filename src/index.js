@@ -52,9 +52,9 @@ const parseRecord = record => {
 
             result._meta = {};
             if (record.elementId)
-                result._meta._elementId = record.elementId;
+                result._meta.elementId = record.elementId;
             if (record.labels)
-                result._meta._labels = record.labels;
+                result._meta.labels = record.labels;
             if(record.startNodeElementId)
                 result._meta.startNodeElementId = parseRecord(record.startNodeElementId);
             if(record.endNodeElementId)
